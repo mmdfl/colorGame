@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="logo">
+            <h2>THE GREAT</h2>
+            <h2 id="targetColor"></h2>
+            <h2>GUESSING GAME</h2>
+        </div>
+        <div id="gameOptions">
+            <input type="button" class="newGame" onclick="generateColor()" value="NEW COLORS">
+            <span id="message"></span>
+            <input id="hardLevel" type="button" onclick="choseEasy()" value="EASY">
+            <input id="easyLevel" class="selectedLevel" type="button" onclick="choseHard()" value="HARD">
+        </div>
+        <div id="container">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+
+        
+
+
+        
+        <script src="script.js"></script>
+    </body>
+</html>
