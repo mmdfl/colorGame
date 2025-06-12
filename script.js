@@ -1,5 +1,7 @@
 //variable initialization
 var targetColor;
+var hits = 0;
+var startTime;
 document.getElementById('targetColor').innerText=targetColor;
 
 var tryAgain=false;
@@ -43,6 +45,16 @@ function guessColor(){
 
 function hitColor(color){
     tryAgain=false;
+    if(startTime){
+        var seconds = ((Date.now() - startTime) / 1000).toFixed(1);
+        hits++;
+        if(document.getElementById('scoreHits')){
+            document.getElementById('scoreHits').innerText = hits;
+        }
+        if(document.getElementById('scoreTime')){
+            document.getElementById('scoreTime').innerText = seconds + 's';
+        }
+    }
     document.getElementById('message').innerText='Correct!';
     document.getElementsByClassName('newGame')[0].value='Play Again?';
     //newGame();
@@ -70,6 +82,10 @@ function newGame(){
     document.getElementsByClassName('newGame')[0].value='NEW GAME'
     document.getElementById('message').innerText=''
     document.getElementById('logo').style.backgroundColor='rgb(59,118,169)';
+    startTime = Date.now();
+    if(document.getElementById('scoreTime')){
+        document.getElementById('scoreTime').innerText='0.0s';
+    }
     generateTargetColor();
     colorOptions=[targetColor];
     document.getElementById('easyLevel').classList.toggle("selectedLevel", level === 'easy');
