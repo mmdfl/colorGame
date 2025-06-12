@@ -22,13 +22,13 @@ function setAllCardsColor(color){
     document.getElementById('logo').style.backgroundColor=color;
 }
 
-function choseEasy(){
+function chooseEasy(){
     tryAgain=false;
     level='easy'
     newGame();
 }
 
-function choseHard(){
+function chooseHard(){
     tryAgain=false;
     level='hard'
     newGame();
