@@ -2,6 +2,7 @@
 var targetColor;
 var hits = 0;
 var startTime;
+var gameActive = false;
 document.getElementById('targetColor').innerText=targetColor;
 
 var tryAgain=false;
@@ -36,6 +37,9 @@ function chooseHard(){
 }
 
 function guessColor(){
+    if(!gameActive){
+        return;
+    }
     if(this.style.backgroundColor===targetColor){
         hitColor(this.style.backgroundColor);
     } else {
@@ -59,6 +63,8 @@ function hitColor(color){
     document.getElementsByClassName('newGame')[0].value='Play Again?';
     //newGame();
     setAllCardsColor(color);
+    gameActive = false;
+    startTime = null;
 }
 
 function missedColor(wrongColor){
@@ -79,6 +85,7 @@ function displayTargetColor(){
 }
 
 function newGame(){
+    gameActive = true;
     document.getElementsByClassName('newGame')[0].value='NEW GAME'
     document.getElementById('message').innerText=''
     document.getElementById('logo').style.backgroundColor='rgb(59,118,169)';
