@@ -31,7 +31,6 @@ body{
 
 input[type="button"]{
     background: none;
-    /* backgroundColor: white; */
     border: none;
     height: 100%;
     color:rgb(59,118,169);
