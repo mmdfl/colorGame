@@ -1,6 +1,5 @@
 //variable initialization
 var targetColor;
-var LastResult=false;
 document.getElementById('targetColor').innerText=targetColor;
 
 var tryAgain=false;
