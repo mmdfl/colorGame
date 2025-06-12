@@ -50,7 +50,7 @@ function hitColor(color){
 }
 
 function missedColor(wrongColor){
-    indexWrong=colorOptions.indexOf(wrongColor);
+    var indexWrong = colorOptions.indexOf(wrongColor);
     if((level==='easy' && indexWrong<3) || level==='hard'){
         fadeAway(indexWrong);
         tryAgain=true;
