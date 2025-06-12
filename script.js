@@ -73,8 +73,8 @@ function newGame(){
     document.getElementById('logo').style.backgroundColor='rgb(59,118,169)';
     generateTargetColor();
     colorOptions=[targetColor];
-    document.getElementById('easyLevel').classList.toggle("selectedLevel",level=='hard');
-    document.getElementById('hardLevel').classList.toggle("selectedLevel",level=='easy');
+    document.getElementById('easyLevel').classList.toggle("selectedLevel", level === 'easy');
+    document.getElementById('hardLevel').classList.toggle("selectedLevel", level === 'hard');
     var amountCards;
     if(level==='easy'){
         amountCards=3;
