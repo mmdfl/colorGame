@@ -132,4 +132,9 @@ function shuffle(array) {
   
     return array;
 }
+
+// export for testing
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { shuffle };
+}
   
